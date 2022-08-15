@@ -60,7 +60,7 @@ const RadioComp = () => {
             className={classNames(
               checked ? "border-transparent" : "border-gray-300",
               active ? "border-blue-500 ring-2 ring-blue-500" : "",
-              "relative bg-white border rounded-lg shadow-sm flex cursor-pointer focus:outline-none px-4 py-2 cq-w-sm:py-4 cq-w-sm:bg-red-500"
+              "relative bg-white border rounded-lg shadow-sm flex cursor-pointer focus:outline-none px-4 py-2 cq-w-sm:py-4"
             )}
           >
             <>
