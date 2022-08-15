@@ -6,37 +6,41 @@ export default function InnerContainerQuery() {
   const [selected, setSelected] = React.useState(workflows[0]);
 
   return (
-    <div className="container-type-size m-10">
-      <div className="grid gap-y-6 mt-4 grid-cols-3 gap-x-4">
-        <div
-          className={classNames(
-            "relative bg-white border rounded-lg shadow-sm flex cursor-pointer focus:outline-none px-4 py-2 cq-w-sm:py-4",
-            selected.id === 1 ? "text-blue-500" : ""
-          )}
-          onClick={() => setSelected(workflows[0])}
-        >
-          {workflows[0].title}
-        </div>
-        <div
-          className={classNames(
-            "relative bg-white border rounded-lg shadow-sm flex cursor-pointer focus:outline-none px-4 py-2 cq-w-sm:py-4",
-            selected.id === 2 ? "text-blue-500" : ""
-          )}
-          onClick={() => setSelected(workflows[1])}
-        >
-          {workflows[1].title}
-        </div>
-        <div
-          className={classNames(
-            "relative bg-white border rounded-lg shadow-sm flex cursor-pointer focus:outline-none px-4 py-2 cq-w-sm:py-4",
-            selected.id === 3 ? "text-blue-500" : ""
-          )}
-          onClick={() => setSelected(workflows[2])}
-        >
-          {workflows[2].title}
+    <>
+      <div className="container-type-size m-10">
+        <div className="grid grid-cols-1 mt-2 gap-y-2 cq-w-sm:gap-y-6 cq-w-sm:mt-4 cq-w-sm:grid-cols-3 cq-w-sm:gap-x-4">
+          {workflows.map((workflow) => (
+            <div
+              key={workflow.id}
+              className={classNames(
+                "relative bg-white border rounded-lg shadow-sm flex cursor-pointer focus:outline-none px-4 py-2 cq-w-sm:py-4",
+                selected.id === workflow.id ? "text-blue-500" : ""
+              )}
+              onClick={() => setSelected(workflow)}
+            >
+              {workflow.title}
+            </div>
+          ))}
         </div>
       </div>
-    </div>
+
+      <div className="container-type-size m-10 mt-20">
+        <div>
+          {workflows.map((workflow) => (
+            <div
+              key={workflow.id}
+              className={classNames(
+                "mt-1 relative bg-white border rounded-lg shadow-sm flex cursor-pointer focus:outline-none px-4 py-2 cq-w-sm:py-4",
+                selected.id === workflow.id ? "text-blue-500" : ""
+              )}
+              onClick={() => setSelected(workflow)}
+            >
+              {workflow.title}
+            </div>
+          ))}
+        </div>
+      </div>
+    </>
   );
 }
 
