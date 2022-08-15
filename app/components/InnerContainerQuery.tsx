@@ -8,7 +8,8 @@ export default function InnerContainerQuery() {
   return (
     <>
       <div className="container-type-size m-10">
-        <div className="grid grid-cols-1 mt-2 gap-y-2 cq-w-sm:gap-y-6 cq-w-sm:mt-4 cq-w-sm:grid-cols-3 cq-w-sm:gap-x-4">
+        <h2>Example 1</h2>
+        <div className="grid grid-cols-1 mt-4 gap-y-2 cq-w-sm:gap-y-6 cq-w-sm:grid-cols-3 cq-w-sm:gap-x-4">
           {workflows.map((workflow) => (
             <div
               key={workflow.id}
@@ -25,7 +26,8 @@ export default function InnerContainerQuery() {
       </div>
 
       <div className="container-type-size m-10 mt-20">
-        <div>
+        <h2>Example 2</h2>
+        <div className="mt-4">
           {workflows.map((workflow) => (
             <div
               key={workflow.id}
